@@ -1,15 +1,15 @@
 <h2 align="center"> --SEARCHING-- </h1>
 <h2 align="center"> BINARY SEARCH  AND  LINEAR SEARCH  </h2>
 
-**Linear Search Pseudocode**
+<h1>**Linear Search Pseudocode**</h1>
 
-<h3 align="left"> This function accepts an array and a value</h3>
-<h3 align="left">Loop through the array and check if the current array element is equal to the value</h3>
-<h3 align="left">If it is, return the index at which the element is found</h3>
-<h3 align="left">If the value is never found, return -1</h3>
+<h4 align="left"> This function accepts an array and a value</h4>
+<h4 align="left">Loop through the array and check if the current array element is equal to the value</h4>
+<h4 align="left">If it is, return the index at which the element is found</h4>
+<h4 align="left">If the value is never found, return -1</h4>
 
-Linear Search
-BIG O
+<p>Linear Search</p>
+<p>BIG O</p>
 
 
 Binary Search
@@ -18,7 +18,7 @@ Binary Search
 Rather than eliminating one element at a time, you can eliminate half of the remaining elements at a time
 Binary search only works on sorted arrays!
 
-**Binary Search Pseudocode**
+<h1>**Binary Search Pseudocode**</h1>
 <p align="left">
 This function accepts a sorted array and a value
 Create a left pointer at the start of the array, and a right pointer at the end of the array
@@ -59,31 +59,31 @@ If you complete the inner loop and find a match, increment the count of matches
 Return the count
 </p>
 <p align="left">
-function matchTable(word) {
-    let arr = Array.from({ length: word.length }).fill(0);
-    let suffixEnd = 1;
-    let prefixEnd = 0;
-    while (suffixEnd < word.length) {
-      if (word[suffixEnd] === word[prefixEnd]) {
-        // we can build a longer prefix based on this suffix
-        // store the length of this longest prefix
-        // move prefixEnd and suffixEnd
-        prefixEnd += 1;
-        arr[suffixEnd] = prefixEnd;
-        suffixEnd += 1;
-      } else if (word[suffixEnd] !== word[prefixEnd] && prefixEnd !== 0) {
-        // there's a mismatch, so we can't build a larger prefix
-        // move the prefixEnd to the position of the next largest prefix
-        prefixEnd = arr[prefixEnd - 1];
-      } else {
-        // we can't build a proper prefix with any of the proper suffixes
-        // let's move on
-        arr[suffixEnd] = 0;
-        suffixEnd += 1;
-      }
-    }
-    return arr;
-  }
+<p>function matchTable(word) {</p>
+  <p>  let arr = Array.from({ length: word.length }).fill(0);</p>
+   <p> let suffixEnd = 1;</p>
+   <p> let prefixEnd = 0;</p>
+  <p>  while (suffixEnd < word.length) {</p>
+   <p>   if (word[suffixEnd] === word[prefixEnd]) {</p>
+     <p>   // we can build a longer prefix based on this suffix</p>
+     <p>   // store the length of this longest prefix</p>
+     <p>   // move prefixEnd and suffixEnd</p>
+     <p>   prefixEnd += 1;</p>
+     <p>   arr[suffixEnd] = prefixEnd;</p>
+     <p>   suffixEnd += 1;</p>
+     <p> } else if (word[suffixEnd] !== word[prefixEnd] && prefixEnd !== 0) {</p>
+       <p> // there's a mismatch, so we can't build a larger prefix</p>
+       <p> // move the prefixEnd to the position of the next largest prefix</p>
+        <p>prefixEnd = arr[prefixEnd - 1];</p>
+      <p>} else {</p>
+        <p>// we can't build a proper prefix with any of the proper suffixes</p>
+        <p>// let's move on</p>
+        <p>arr[suffixEnd] = 0;</p>
+        <p>suffixEnd += 1;</p>
+      <p>}</p>
+    <p>}</p>
+   <p> return arr;</p>
+  <p>}</p>
 
 
 
