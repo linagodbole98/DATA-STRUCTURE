@@ -88,48 +88,48 @@ Return the count
 
 
  **//KMP** 
-  function kmpSearch(long, short) {
-    let table = matchTable(short);
-    let shortIdx = 0;
-    let longIdx = 0;
-    let count = 0;
-    while (longIdx < long.length - short.length + shortIdx + 1) {
-      if (short[shortIdx] !== long[longIdx]) {
-        // we found a mismatch :(
-        // if we just started searching the short, move the long pointer
-        // otherwise, move the short pointer to the end of the next potential prefix
-        // that will lead to a match
-        if (shortIdx === 0) longIdx += 1;
-        else shortIdx = table[shortIdx - 1];
-      } else {
-        // we found a match! shift both pointers
-        shortIdx += 1;
-        longIdx += 1;
-        // then check to see if we've found the substring in the large string
-        if (shortIdx === short.length) {
-          // we found a substring! increment the count
-          // then move the short pointer to the end of the next potential prefix
-          count++;
-          shortIdx = table[shortIdx - 1];
-        }
-      }
-    }
-    return count;
-  }
+  <p>function kmpSearch(long, short) {</p>
+   <p> let table = matchTable(short);</p>
+    <p>let shortIdx = 0;</p>
+    <p>let longIdx = 0;</p>
+    <p>let count = 0;</p>
+    <p>while (longIdx < long.length - short.length + shortIdx + 1) {</p>
+     <p> if (short[shortIdx] !== long[longIdx]) {</p>
+      <p>  // we found a mismatch :(</p>
+       <p> // if we just started searching the short, move the long pointer</p>
+        <p>// otherwise, move the short pointer to the end of the next potential prefix </p>
+        <p>// that will lead to a match </p>
+        <p>if (shortIdx === 0) longIdx += 1; </p>
+        <p>else shortIdx = table[shortIdx - 1]; </p>
+      <p>} else { </p>
+        <p>// we found a match! shift both pointers </p>
+        <p>shortIdx += 1; </p>
+        <p>longIdx += 1; </p>
+        <p>// then check to see if we've found the substring in the large string </p>
+        <p>if (shortIdx === short.length) { </p>
+          <p>// we found a substring! increment the count </p>
+          <p>// then move the short pointer to the end of the next potential prefix </p>
+          <p>count++; </p>
+          <p>shortIdx = table[shortIdx - 1]; </p>
+       <p> } </p>
+     <p> } </p>
+    <p>} </p>
+    <p>return count; </p>
+  <p>} </p>
 </p>
 
 <p align="left">
->Big O of Search Algorithms<
-Linear Search - O(n)
-Binary Search - O(log n)
-Naive String Search - O(nm)
-KMP - O(n + m) time, O(m) space
+ <p> >Big O of Search Algorithms< </p>
+ <p> Linear Search - O(n) </p>
+ <p> Binary Search - O(log n) </p>
+ <p> Naive String Search - O(nm) </p>
+<p> KMP - O(n + m) time, O(m) space </p>
 </p>
 
 **"Recap"**
 <p align="left">
-Searching is a very common task that we often take for granted
-When searching through an unsorted collection, linear search is the best we can do
-When searching through a sorted collection, we can find things very quickly with binary search
-KMP provides a linear time algorithm for searches in strings
-</p>
+<p>Searching is a very common task that we often take for granted </p>
+<p>When searching through an unsorted collection, linear search is the best we can do </p>
+<p>When searching through a sorted collection, we can find things very quickly with binary search </p>
+<p>KMP provides a linear time algorithm for searches in strings </p>
+</p> 
